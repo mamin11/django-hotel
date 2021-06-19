@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div clas="col-6 flex flex-row justify-center align-middle mx-auto">
+            <p class="text-center">welcome to the home page</p>
+            <button class="btn">
+                    Notification <span class="badge badge-primary"></span>
+            </button>
+            <div>
+                <ul>
+                    {% for room in rooms %}
+                        <li>{{room.room_number}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -9,7 +9,7 @@ class Rooms(models.Model):
     isAvailable = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.room_number
 
     def __unicode__(self):
         return 
