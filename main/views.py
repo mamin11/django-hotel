@@ -13,3 +13,7 @@ def room(response, id):
 
 def about(response):
     return render(response, "main/about.html")
+
+def rooms(response):
+    rooms = Rooms.objects.all()
+    return render(response, "main/rooms.html", {"rooms":rooms})

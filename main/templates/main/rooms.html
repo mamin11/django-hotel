@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container-fluid bg-gray-200">
+    <div class="row">
+        <div class="cols-12 mx-auto my-5">
+            
+    {% comment %} <div class="grid mt-8  gap-8 grid-cols-1 md:grid-cols-3 xl:grid-cols-3"> {% endcomment %}
+    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-20">
+
+        {% for room in rooms %}
+        <div class="flex max-w-xl bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="w-full bg-cover" style="background-image: url('{{room.image}}')">
+            </div> 
+            <div class="w-full p-4">
+            <h1 class="text-gray-900 font-bold text-2xl">{{room.room_number}}</h1>
+            <p class="mt-2 text-gray-600 text-sm">{{room.description}}</p>
+            <div class="flex item-center mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="3" y1="21" x2="21" y2="21"></line>
+                <line x1="9" y1="8" x2="10" y2="8"></line>
+                <line x1="9" y1="12" x2="10" y2="12"></line>
+                <line x1="9" y1="16" x2="10" y2="16"></line>
+                <line x1="14" y1="8" x2="15" y2="8"></line>
+                <line x1="14" y1="12" x2="15" y2="12"></line>
+                <line x1="14" y1="16" x2="15" y2="16"></line>
+                <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"></path>
+                </svg>
+                <span class="font-bold mx-2">Floor: {{room.floor}}</span>
+            </div>
+            {% if room.isAvailable == True %}
+                <div class="flex item-center mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-checkbox" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <polyline points="9 11 12 14 20 6"></polyline>
+                        <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
+                    </svg>
+                    <span class="font-bold mx-2">Available</span>
+                </div>
+            {% else %}
+                <div class="flex item-center mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hexagon-off" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8.693 4.69l2.336 -1.39a2.056 2.056 0 0 1 2 0l6 3.573h-.029a2 2 0 0 1 1 1.747v6.536c0 .246 -.045 .485 -.13 .707m-2.16 1.847l-4.739 3.027a2 2 0 0 1 -1.942 0l-6 -3.833a2 2 0 0 1 -1.029 -1.747v-6.537a2 2 0 0 1 1.029 -1.748l1.154 -.687"></path>
+                    <path d="M3 3l18 18"></path>
+                    </svg>
+                    <span class="font-bold mx-2">Unavailable</span>
+                </div>
+            {% endif %}
+            <div class="flex item-center justify-between mt-3">
+                <h1 class="text-gray-700 font-bold text-xl">£{{room.price}}</h1>
+                <a href="/room/{{room.id}}" class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Book</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
