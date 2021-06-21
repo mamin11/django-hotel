@@ -1,20 +1,132 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div clas="col-6 flex flex-row justify-center align-middle mx-auto">
-            <p class="text-center">welcome to the home page</p>
-            <button class="btn">
-                    Notification <span class="badge badge-primary"></span>
-            </button>
-            <div>
-                <ul>
-                    {% for room in rooms %}
-                        <li>{{room.room_number}}</li>
-                    {% endfor %}
-                </ul>
+<div>
+    <div class="bg-gray-800" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80'); 
+    background-size: cover; background-position: center;
+    " x-data="{ isOpen: false }">
+        <section class="flex items-center justify-center" style="min-height: 550px; height: 750px;">
+            <div class="text-center">
+                <p class="text-xl font-medium tracking-wider text-gray-300">On Top of the ocean</p>
+                <h2 class="mt-6 text-3xl font-bold text-white md:text-6xl p-3">Spend your holiday at, <br> a destination you will remember</h2>
+    
+                <div class="flex justify-center mt-8">
+                    <a class="block px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-blue-700 rounded hover:bg-blue-600"
+                        href="#" style="text-decoration:none">Book Now</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="items-center md:flex md:space-x-6">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800">Lively during the day</h3>
+                    <p class="max-w-md mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+    
+                <div class="mt-8 md:mt-0 md:w-1/2">
+                    <div class="flex items-center justify-center">
+                        <div class="max-w-md">
+                            <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
+                                src="https://images.unsplash.com/photo-1586972246803-d2bdc4006378?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fGhvdGVsJTIwcGFydHl8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="items-center md:flex md:space-x-6">
+                <div class="md:w-1/2">
+                    <div class="flex items-center justify-center">
+                        <div class="max-w-md">
+                            <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
+                                src="https://images.unsplash.com/photo-1623298317883-6b70254edf31?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGhvdGVsfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="mt-8 md:mt-0 md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800">Exquisite at night</h3>
+                    <p class="max-w-md mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="md:flex md:justify-center">
+                <h2 class="text-3xl font-semibold text-gray-800 text-center">Whats included</h2>
+            </div>
+    
+            <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
+                <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+                    <div class="flex flex-col justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto icon icon-tabler icon-tabler-tools-kitchen-2 my-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12zm0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3"></path>
+                        </svg>
+                        <h2 class="text-xl font-medium text-gray-800 text-center">Breakfast included</h2>
+                    </div>
+                    <p class="max-w-md mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+                        volutpat, viverra magna risus aliquam massa.</p>
+                </div>
+    
+                <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+                <div class="flex flex-col justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-2 icon icon-tabler icon-tabler-bed" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6"></path>
+                        <circle cx="7" cy="10" r="1"></circle>
+                    </svg>
+                    <h2 class="text-xl font-medium text-gray-800 text-center">Room service</h2>
+                </div>
+                    <p class="max-w-md mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+                        volutpat,
+                        viverra magna risus aliquam massa.</p>
+                </div>
+    
+                <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+                <div class="flex flex-col justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-2 icon icon-tabler icon-tabler-swimming" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="16" cy="9" r="1"></circle>
+                <path d="M6 11l4 -2l3.5 3l-1.5 2"></path>
+                <path d="M3 16.75a2.4 2.4 0 0 0 1 .25a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 1 -.25"></path>
+                </svg>
+                    <h2 class="text-xl font-medium text-gray-800 text-center">Private pool</h2>
+                </div>
+                    <p class="max-w-md mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+                        volutpat,
+                        viverra magna risus aliquam massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 uppercase">Don't wait too long</h2>
+    
+            <img class="object-cover object-center w-full mt-16 rounded-md shadow h-80"
+                src="https://images.unsplash.com/photo-1504814532849-cff240bbc503?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80">
+        </div>
+    </section>
+    
+    <footer class="border-t bg-gray-900">
+        <div class="container-fluid flex flex-col items-center justify-center px-6 py-8 mx-auto">
+            <p class="text-white">© 2021 All Rights Reserved.</p>
+            <p class="font-medium text-white">Terms of Service</p>
+        </div>
+    </footer>
 </div>
 {% endblock content %}
