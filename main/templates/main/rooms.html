@@ -49,7 +49,9 @@
             {% endif %}
             <div class="flex item-center justify-between mt-3">
                 <h1 class="text-gray-700 font-bold text-xl">£{{room.price}}</h1>
-                <a href="/room/{{room.id}}" class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Book</a>
+                {% if room.isAvailable == True%}
+                    <a href="/room/{{room.id}}" class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">View</a>
+                {% endif %}
             </div>
             </div>
         </div>

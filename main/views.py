@@ -9,7 +9,7 @@ def index(response):
 
 def room(response, id):
     room = Rooms.objects.get(id=id)
-    return HttpResponse("<h1>%s</h1>" %room.room_number)
+    return render(response, "main/singleRoom.html", {"room":room})
 
 def about(response):
     return render(response, "main/about.html")
